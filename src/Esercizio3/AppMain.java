@@ -8,7 +8,7 @@ public class AppMain {
 
         Scanner scanner = new Scanner(System.in);
         ContoCorrente conto = new ContoCorrente(100.00,0);
-
+        ContoOnline  co = new ContoOnline(200.0,0,50);
 
         try{
             System.out.println("inserisci importo da prelevare");
@@ -19,6 +19,15 @@ public class AppMain {
 
         } catch (BancaException e){
             System.out.println("errore: " + e.getMessage());
+        }
+
+        try{
+            System.out.println("Inserisci l'importo da prelevare dal ContoOnline:");
+            double importo2 = scanner.nextDouble();
+            co.preleva(importo2);
+            System.out.println("Prelievo da ContoOnline riuscito! Saldo: " + co.getSaldo());
+        }catch (BancaException e){
+            System.out.println("Errore ContoOnline: " + e.getMessage());
         }
 
         System.out.println("saldo attuale: " + conto.getSaldo());
