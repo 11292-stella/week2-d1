@@ -16,7 +16,7 @@ public class ModificaArray {
             System.out.println("Posizione " + i + ": " + interi[i]);
         }
 
-       
+
         while (true) {
 
             System.out.println("Scegli una posizione da 0 a 4 (o 0 per uscire):");
